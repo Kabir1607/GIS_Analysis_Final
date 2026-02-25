@@ -1,0 +1,141 @@
+DATASET LABELS REPORT
+============================================================
+
+------------------------------------------------------------
+Dataset 1 (Arunachal_ground_points - Point.csv)
+Total rows: 43200
+Unique labels: 21
+------------------------------------------------------------
+
+  Label        Class        Class Description
+  ----------   ----------   -------------------------
+  104          BMB          bamboo
+  105          BMB-DF       bamboo degraded forest
+  106          DEFO         Dense Forests
+  107          SF           secondary forest
+  108          PR           Unlogged/Primary
+  109          SF           Old_logged_25/Secondary
+  201          RP           Rubber plantation
+  204          RC           Rice cultivation
+  205          SC           Shifting cultivation
+  206          MN           Monoculture
+  301          DF           degraded forest
+  302          AM           Alpine Meadows
+  303          GF           grassland, clearing
+  306          PTR          pakke tiger reserve
+  307          OP           Open forests
+  400          RW           Rivers/water bodies
+  500          SB           Settlements and built-up areas
+  501          RD           road camp
+  600          LA           landslide,clearing
+  601          SN           alpine and snow, subalpine
+                            
+
+------------------------------------------------------------
+Dataset 2 (Arunachal_ground_points - KP-FAK.csv)
+Total rows: 57
+Unique labels: 55
+------------------------------------------------------------
+
+  Label        Class        Class Description
+  ----------   ----------   -------------------------
+  AGR-MUSTARD-2711 mustard      
+  AGR-TOM2811  tomato       
+  AGR-TOMATO-2511 tomato       
+  AGR-TOMATO-2711 tomato       
+  AGRI         mixed agriculture 
+  AGRO-ORANGE-2711 orange       
+  AGRO-ORANGE-27NOV orange       
+  Abango Palm Oil oil plam     
+  Abango palm Oil oil plam     
+  BAMBOO 3122  bamboo       
+  BAMBOO 4126  bamboo       
+  BAMBOO 7121  bamboo       
+  BAMBOO412    bamboo       
+  BAMBOO4121   bamboo       
+  Bamboo       bamboo       
+  DE3CIDOUS 9121 deciduous forest 
+  Injono Palm Oil oil plam     
+  JHUM 301     jhum         
+  JHUM 3121    jhum         
+  JHUM 31256   jhum         
+  JHUM-271     jhum         
+  ORAN 4126    orange       
+  PINE 301     pine         
+  PINE-30112   pine         
+  PLANTATION   rubber plantation 
+  Palm Oil     oil plam     
+  bamboo 10121 bamboo       
+  bamboo 3123  bamboo       
+  bamboo 3124  bamboo       
+  bamboo 4124  bamboo       
+  bamboo 8121  grassland    
+  decidous forest 1 decidous forest 
+  decidous forest 2 decidous forest 
+  decidous forest 3 decidous forest 
+  fallow       fallow       
+  grassland    grassland    
+  grassland 293 grassland    
+  grassland 294 grassland    
+  grassland 295 grassland    
+  grassland 301 grassland    
+  grassland 302 grassland    
+  grassland 303 grassland    
+  grassland 305 grassland    
+  grassland 307 grassland    
+  grassland 308 grassland    
+  jhum 3121217 jhum         
+  jhum 3122    jhum         
+  jhum 3123    jhum         
+  jhum 3125    jhum         
+  mixed decidous forest 1 decidous forest 
+  oil palm     oil plam     
+  scrubland 1  scrubland    
+  wasteland    scrub        
+  wasteland 296 scrub        
+  water 1      water        
+
+------------------------------------------------------------
+Dataset 3 (Arunachal_ground_points_working_file - Point.csv)
+Total rows: 1953
+Unique labels: 19
+------------------------------------------------------------
+
+  Label        Class        Class Description
+  ----------   ----------   -------------------------
+  104          BMB          bamboo
+  105          BMB-DF       bamboo degraded forest
+  106          DEFO         forest
+  107          SF           secondary forest
+  108          PR           Unlogged/Primary
+  109          SF           Old_logged_25/Secondary
+  201          RP           Rubber plantation
+  204          RC           cultivation, clearing
+  205          SC           cultivation, clearing
+  206          AR           Arecanut plantation
+  301          DF           degraded forest
+  303          GF           grassland, clearing
+  306          PTR          pakke tiger reserve
+  307          OP           more open forest, canopy gaps
+  400          RW           river bodies
+  500          SB           settlements and build-up areas
+  501          RD           road camp
+  600          LA           landslide,clearing
+  601          SN           alpine and snow, subalpine
+
+------------------------------------------------------------
+Dataset 4 (Arunachal_ground_points_working_file - Chiging's data (1).csv)
+Total rows: 41227
+Unique labels: 8
+------------------------------------------------------------
+
+  Label        Class        Class Description
+  ----------   ----------   -------------------------
+  106          DEFO         Dense Forests
+  204          RC           Rice cultivation
+  205          SC           Shifting cultivation
+  206          MN           Monoculture
+  302          AM           Alpine Meadows
+  307          OP           Open forests
+  400          RW           Rivers/water bodies
+  500          SB           Settlements and built-up areas

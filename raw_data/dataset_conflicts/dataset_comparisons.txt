@@ -1,0 +1,48 @@
+======================================================================
+CROSS-COMPARISON REPORT: Datasets 1, 3, and 4
+======================================================================
+
+----------------------------------------------------------------------
+PAIR: DS1 vs DS3
+----------------------------------------------------------------------
+  Unique coords in DS1: 41377
+  Unique coords in DS3: 1945
+  Shared coordinates: 1945
+  Only in DS1: 39432
+  Only in DS3: 0
+  Label AGREE on shared coords: 1945
+  Label DISAGREE on shared coords: 0
+    -> Same year, different label: 0
+    -> Different year, different label: 0
+
+----------------------------------------------------------------------
+PAIR: DS1 vs DS4
+----------------------------------------------------------------------
+  Unique coords in DS1: 41377
+  Unique coords in DS4: 39426
+  Shared coordinates: 39426
+  Only in DS1: 1951
+  Only in DS4: 0
+  Label AGREE on shared coords: 39426
+  Label DISAGREE on shared coords: 0
+    -> Same year, different label: 0
+    -> Different year, different label: 0
+
+----------------------------------------------------------------------
+PAIR: DS3 vs DS4
+----------------------------------------------------------------------
+  Unique coords in DS3: 1945
+  Unique coords in DS4: 39426
+  Shared coordinates: 0
+  Only in DS3: 1945
+  Only in DS4: 39426
+  Label AGREE on shared coords: 0
+  Label DISAGREE on shared coords: 0
+    -> Same year, different label: 0
+    -> Different year, different label: 0
+
+----------------------------------------------------------------------
+THREE-WAY OVERLAP: DS1 & DS3 & DS4
+----------------------------------------------------------------------
+  Coordinates present in ALL three datasets: 0
+  Three-way label disagreements: 0

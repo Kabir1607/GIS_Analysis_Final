@@ -1,0 +1,49 @@
+**Geographical & Environmental Constraints to Consider:**
+*   **Topography:** Arunachal Pradesh features extreme topographical variations, ranging from plains to high-altitude Himalayan mountains (up to 7000m) and steep slopes. 
+*   **Class Imbalance:** The region is heavily forested (~70-80% cover), meaning the "Forest" class will massively dominate the dataset compared to minority classes like "Built-up", "Agriculture", "Water", and "Snow/Glaciers". 
+*   **Cloud Cover:** Due to high rainfall (3000–4000 mm annually), optical imagery will often be obscured by clouds. 
+
+---
+
+### 1. FEATURE ENGINEERING PREFERENCES
+The model should utilize a multi-source feature stack. When generating data processing code, prioritize the following features:
+
+*   **Topographic Variables (DEM-derived):** Extract Elevation, Slope, and Aspect. Also, calculate the Topographic Position Index (TPI), Topographic Wetness Index (TWI) for soil moisture, and Stream Power Index (SPI) to measure erosive power.
+*   **Optical + SAR Fusion:** Combine Sentinel-2 (Multispectral) with Sentinel-1 (Synthetic Aperture Radar) data. SAR (VV and VH backscatter) is essential because it penetrates cloud cover, which is highly prevalent in this high-altitude region.
+*   **Spectral Indices:** Compute standard indices: NDVI (vegetation), NDWI or MNDWI (water), NDSI (snow), and NDGI (glaciers).
+*   **Pre-trained Embeddings (Optional but Recommended):** Consider using geospatial foundation model embeddings as input features instead of raw pixels. For instance, Google's AlphaEarth provides 64-dimensional pre-computed vectors, or TESSERA provides 128-dimensional temporal embeddings. These encapsulate rich spatial, spectral, and temporal patterns without requiring complex preprocessing.
+
+---
+
+### 2. TACKLING CLASS IMBALANCE
+Because the dataset is heavily skewed towards the forest class, standard learning algorithms will become biased towards the majority class. Implement the following strategies in the codebase:
+
+*   **Data-Level Oversampling (`imblearn`):**
+    *   Do not use simple random oversampling. Instead, utilize **SMOTE** (Synthetic Minority Oversampling Technique) to generate synthetic points for minority classes.
+    *   **K-means SMOTE:** Highly recommended for LULC classification to address both between-class and within-class imbalances without generating noisy data.
+    *   **ADASYN:** Use the Adaptive Synthetic sampling approach (via `imblearn.over_sampling.ADASYN`) to adaptively shift the decision boundary toward harder-to-classify minority examples.
+*   **Algorithm-Level Loss Functions (If using Deep Learning):**
+    *   **Focal Loss:** Implement Focal Loss to dynamically scale down the weight of well-classified majority examples and focus the model on difficult minority classes.
+    *   **Cross-Entropy Masking (CEM):** Use a CEM loss mechanism to randomly mask pixels of the majority class during loss calculation, preventing the error gradient from being dominated by the majority class.
+
+---
+
+### 3. MODEL ARCHITECTURE SELECTION
+When generating model training code, select from the following proven architectures:
+
+*   **Tree-Based Ensemble Models (Machine Learning):**
+    *   Use `XGBoost`, `RandomForestClassifier`, `LightGBM`, or `CatBoost`. These algorithms are highly effective for high-dimensional remote sensing data, are resistant to overfitting, and excel in mixed terrain classification. 
+*   **Deep Learning (If patch-based/spatial data is available):**
+    *   **U-Net / Attention U-Net:** Best for semantic segmentation of patches.
+    *   **Multilayer Perceptron (MLP-NN):** Effective for processing point-based pixel arrays fused with topographical features.
+
+---
+
+### 4. EVALUATION METRICS
+Do not optimize for or rely on **Overall Accuracy (OA)**, as the dominance of the forest class will yield misleadingly high results.
+
+*   Optimize the code to evaluate the model using:
+    *   **Macro F1-Score** (to treat all classes equally regardless of support size).
+    *   **Kappa Coefficient**.
+    *   **Producer’s Accuracy (Recall) and User’s Accuracy (Precision)** per class.
+    *   **ROC-AUC**.
