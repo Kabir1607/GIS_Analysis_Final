@@ -1,0 +1,48 @@
+============================================================
+BASELINE MODEL EVALUATION: SATELLITE EMBEDDINGS (2024)
+============================================================
+
+--- Model: RandomForest ---
+Overall Accuracy:  0.9316
+Balanced Accuracy: 0.9349
+Macro F1-Score:    0.9338
+Kappa Coefficient: 0.9080
+
+Classification Report:
+                precision    recall  f1-score   support
+
+        Forest       0.92      0.91      0.91       616
+Grassland/Open       0.99      0.99      0.99       143
+   Non-Tree Ag       0.97      0.95      0.96      2431
+ Tree based Ag       0.86      0.95      0.90      1316
+         Urban       0.92      0.93      0.93       475
+         Water       0.94      0.88      0.91      1055
+
+      accuracy                           0.93      6036
+     macro avg       0.93      0.93      0.93      6036
+  weighted avg       0.93      0.93      0.93      6036
+
+----------------------------------------
+
+--- Model: XGBoost ---
+Overall Accuracy:  0.9486
+Balanced Accuracy: 0.9479
+Macro F1-Score:    0.9473
+Kappa Coefficient: 0.9309
+
+Classification Report:
+                precision    recall  f1-score   support
+
+        Forest       0.92      0.92      0.92       616
+Grassland/Open       0.98      0.99      0.98       143
+   Non-Tree Ag       0.98      0.97      0.97      2431
+ Tree based Ag       0.91      0.96      0.93      1316
+         Urban       0.95      0.95      0.95       475
+         Water       0.94      0.91      0.93      1055
+
+      accuracy                           0.95      6036
+     macro avg       0.95      0.95      0.95      6036
+  weighted avg       0.95      0.95      0.95      6036
+
+----------------------------------------
+
